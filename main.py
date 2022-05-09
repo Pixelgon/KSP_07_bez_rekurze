@@ -46,4 +46,5 @@ print("Nejmenší společný násobek:", least_multiple(numA, numB))
 
 # Zapiseme odpovedi do souboru
 out.write(str(greatest_div(numA, numB)) + '\n' + str(least_multiple(numA, numB)))
+exit()
 out.close()
