@@ -24,6 +24,19 @@ def greatest_div(nA, nB):
             div = i
     return div
 
+def greatest_div_euk(nA, nB):
+    while nB != 0:
+        div = nA % nB
+        nA = nB
+        nB = div
+    return nA
+
+def greatest_div_rec(nA, nB):
+    if nB == 0:
+        return nA
+    else:
+        return greatest_div_rec(nB, nA % nB)
+
 # Nejmensi spolecny nasobek
 def least_multiple(nA, nB):
     # Nacteme vetsi cislo do promene greater
@@ -43,6 +56,7 @@ def least_multiple(nA, nB):
 # Printneme odpovedi
 print("Největší společný dělitel:", greatest_div(numA, numB))
 print("Nejmenší společný násobek:", least_multiple(numA, numB))
+print("Největší společný dělitel:", greatest_div_rec(numA, numB))
 
 # Zapiseme odpovedi do souboru
 out.write(str(greatest_div(numA, numB)) + '\n' + str(least_multiple(numA, numB)))
